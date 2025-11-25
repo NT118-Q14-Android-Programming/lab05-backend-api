@@ -1,5 +1,10 @@
 <?php
-$host = "db";  // container name
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Content-Type: application/json; charset=UTF-8");
+
+$host = "db";
 $user = "root";
 $pass = "root";
 $db   = "lab5";

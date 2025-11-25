@@ -1,6 +1,21 @@
 <?php
+// ==========================
+// CORS FIX
+// ==========================
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Content-Type: application/json; charset=UTF-8");
 
+// Nếu browser gửi OPTIONS request (preflight) → trả về 200 ngay
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+// ==========================
+// LOGIC LOGIN
+// ==========================
 include "db.php";
 
 $data = json_decode(file_get_contents("php://input"));
