@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
+$host = "db";  // container name
 $user = "root";
-$pass = "";
-$db = "lab5";
+$pass = "root";
+$db   = "lab5";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
